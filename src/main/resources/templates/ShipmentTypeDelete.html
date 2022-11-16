@@ -1,0 +1,48 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<body>
+<h3>WELCOME TO SHIPMENT PROJECT D</h3>
+
+
+<form th:action="@{/shipmenttype/delete}" method="POST" th:object="${shipmentType}">
+
+<pre>
+
+SHIPMENT ID:<input th:field="*{id}" readonly="readonly"/>
+
+SHIPMENT MODE:  <select th:field="*{shipmentMode}">
+
+<option value="">--SELECT--</option>
+<option value="Air">Air</option>
+<option value="Truck">Truck</option>
+<option value="Ship">Ship</option>
+<option value="Train">Train</option>
+<option value="Ship">Ship</option>
+
+               </select>
+
+SHIPMENT CODE: <input type="text" th:field="*{shipmentCode}">
+
+ENABLE SHIPMENT: <select th:field="*{enableShipment}">
+              <option value="">--SELECT--</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              
+              </select>
+              
+SHIPMENT GRADE:
+            <input type="radio"  th:field="*{shipmentGrade}" value="A"/>A
+            <input type="radio"  th:field="*{shipmentGrade}" value="B"/>B
+            <input type="radio"  th:field="*{shipmentGrade}" value="c"/>C
+            
+            
+DESCRIPTION:  
+            <textarea th:field="*{description}"> </textarea>
+            <input type="submit" value="Delete Shipment"/>                    
+              
+ </pre>
+  
+</form>
+<span th:text="${message2}"></span>
+</body>
+</html>
